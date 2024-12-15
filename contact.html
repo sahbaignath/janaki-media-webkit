@@ -48,13 +48,13 @@
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
                                 <ul>     
-                                    <li class="title"><span class="flaticon-energy"></span> trending-title</li>
+                                    <li class="title"><span class="flaticon-energy"></span> Ground Zero</li>
                                     <li>Class property employ ancho red multi level mansion</li>
                                 </ul>
                             </div>
                             <div class="header-info-right">
                                 <ul class="header-date">
-                                    <li><span class="flaticon-calendar"></span> +977-9854021290,9816853777 </li>
+                                    <li><span class="flaticon-calendar"></span>+977-9854021290 </li>
                                 </ul>
                             </div>
                         </div>
@@ -177,40 +177,70 @@
 
         </div>
 
-
+<!--Form-->
+<div class="col-lg-8">
+    <form class="form-contact contact_form" id="contactForm" novalidate="novalidate">
         <div class="row">
             <div class="col-12">
-                <h2 class="contact-title">Get in Touch</h2>
+                <div class="form-group">
+                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" 
+                              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" 
+                              placeholder="Enter Message"></textarea>
+                </div>
             </div>
-            <div class="col-lg-8">
-                <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mt-3">
-                        <button type="submit" class="button button-contactForm boxed-btn">Send</button>
-                    </div>
-                </form>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input class="form-control valid" name="name" id="name" type="text" 
+                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" 
+                           placeholder="Enter your name">
+                </div>
             </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input class="form-control valid" name="email" id="email" type="email" 
+                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" 
+                           placeholder="Email">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <input class="form-control" name="subject" id="subject" type="text" 
+                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" 
+                           placeholder="Enter Subject">
+                </div>
+            </div>
+        </div>
+        <div class="form-group mt-3">
+            <button type="button" class="button button-contactForm boxed-btn" id="submitButton">Send</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function() {
+        // Collect form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Validate form inputs
+        if (!name || !email || !subject || !message) {
+            alert('Please fill out all fields.');
+            return;
+        }
+
+        // Format the WhatsApp message
+        const phoneNumber = '+9779816853777'; // Replace with the recipient's number
+        const whatsappMessage = `Hello,\n\nHere are the details:\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+        // Redirect to WhatsApp
+        window.open(whatsappURL, '_blank');
+    });
+</script>
+
+            <!--contact info-->
             <div class="col-lg-3 offset-lg-1">
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-home"></i></span>
@@ -254,11 +284,11 @@
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p class="info1">Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                        <p class="info2">198 West 21th Street, Suite 721 New York,NY 10010</p>
-                                        <p class="info2">Phone: +95 (0) 123 456 789 Cell: +95 (0) 123 456 789</p>
-                                </div>
-                                </div>
+                                        <p class="info1">Janaki Television is a trusted news channel delivering timely and accurate coverage of local, national, and global events, keeping viewers informed and engaged.</p>
+                                        <p class="info2">04- murli Chowk , Infront of SSO office, JanakpurDham, Nepal- 45600</p>
+                                        <p class="info2">NTC: +977-9854021290 Ncell: +977-9816853777</p>
+                                    </div>
+                
                             </div>
                         </div>
                     </div>
